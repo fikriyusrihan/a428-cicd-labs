@@ -1,11 +1,7 @@
 node {
-    stage('Prepare') {
-        docker.image('node:16-buster-slim').withRun('-p 3000:3000') {
-            sh 'echo "prepare node"'
+    docker.image('node:16-buster-slim').withRun('-p 3000:3000') {
+        stage('Build') {
+            sh 'npm install'
         }
-    }
-
-    stage('Build') {
-        sh 'npm install'
     }
 }
