@@ -1,7 +1,7 @@
 node {
     properties([
         pipelineTriggers([
-            [$class: 'PoolSCMTrigger', scmpollspec: '*/2 * * * *']
+            [$class: 'SCMTrigger', scmpollspec: '*/2 * * * *']
         ])
     ])
 
